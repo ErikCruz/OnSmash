@@ -18,3 +18,7 @@ def video(hash):
 @app.route("/videos/embed/<hash>")
 def embed(hash):
     return render_template("videos/embed.html")
+
+@app.route("/videos/new", methods=["GET","POST"])
+def new_video():
+    return render_template("videos/new.html")
