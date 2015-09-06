@@ -1,0 +1,37 @@
+{% extends "base_embed.html" %}
+
+{% block content %}
+<div id="video-player" class="embed-responsive embed-responsive-16by9">
+    <div class="dmplaypause"></div>
+    <div class="video_load_overlay"></div>
+    <div id="mymovie" class="qeyX2R66fMU"></div>
+    <div class="rapvlog_player_controls_wrap">
+        <div class="rapvlog_player_controls_shade">
+            <div class="rapvlog_player_controls_contain">
+                <div class="rapvlog_player_controls_playbutton">
+                    <i class="fa fa-play"></i>
+                </div>
+                <div class="rapvlog_player_controls_logo">
+                    <a href="/"><img src="http://cache.worldstarhiphop.com/videos/images/logo.png"></a>
+                </div>
+                <div class="rapvlog_player_controls_volume">
+                    <div class="rapvlog_player_controls_volume_bar">
+                        <div class="rapvlog_player_controls_volume_handle"></div>
+                    </div>
+                </div>
+                <div class="rapvlog_player_controls_time">00:00 / 00:00</div>
+                <div class="rapvlog_player_controls_seek">
+                    <div class="rapvlog_player_controls_buffer"></div>
+                    <div class="rapvlog_player_controls_progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('static', filename='javascripts/jtube.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='javascripts/youtube.js') }}"></script>
+{% endblock %}

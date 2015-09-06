@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article>
+    <h2 class='post-title'>Young Buck "Let Me See It" (WSHH Exclusive - Official Music Video)</h2>
+
+    <!-- 16:9 aspect ratio -->
+    <div id='video' class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="{{ url_for('embed', hash='2xb9Ty-1frw') }}" frameborder="0"></iframe>
+    </div>
+
+    <ul class="nav nav-tabs">
+        <li class='views'>124,852 views</li>
+        <li role="presentation" class="active"><a aria-controls="description" href="#description" data-toggle="tab">Description</a></li>
+        <li role="presentation"><a aria-controls="embed" href="#embed" data-toggle="tab">Embed</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="description">
+            <p>The official WorldStarHipHop premiere of Young Buck's "Let Me See It" music video. Directed by Joe Yung Spike. Young Buck's '10 Bullets' mixtape out now:</p>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="embed">
+            <p>
+                <input type="text" class="form-control" id="embed" value='<iframe width="640" height="360" src="http://www.worldstarhiphop.com/embed/84231" frameborder="0" allowfullscreen></iframe>'>
+            </p>
+        </div>
+    </div>
+
+    <div class='comments'>
+        <textarea class='form-control' name="input-comment" placeholder='Leave Comment...' rows='3'></textarea>
+        <div>
+            <button id='comment-button' type='button' class='btn btn-default'>Add Reply</button>
+            <div class='clearfix'></div>
+        </div>
+
+
+        <div class='comment'>
+            <div class='usr_info'>
+                <img src="http://freeonsmash.com/forums/os_services/comments/default.gif" class="img-responsive img-rounded">
+                <div class='usr_username'>Anonymous</div>
+                <div>Posted: Yesterday</div>
+            </div>
+            <div class='comment_text'>
+                <p>Fifty owe me $909,000,073 and Im gettin it</p>
+            </div>
+            <div class='clearfix'></div>
+        </div>
+
+        <div class='showmore vermascomentarios'>
+            <p>Load More Comments</p>
+        </div>
+
+        <!-- clearfix -->
+        <div class='clearfix'></div>
+    </div>
+
+</article>
+
+<div class='sidebar visible-lg-block visible-md-block'>
+    <div class='side-ad'>
+        <img src='http://placehold.it/300x250'>
+    </div>
+
+    <div class='related-videos'>
+
+        <div class='similar-video'>
+            <a href='#'><img src='http://img.youtube.com/vi/IjzQI2VFR-k/mqdefault.jpg' width='120' height='90'></a>
+            <div class='similar-title'>
+                <a href='#'>Young Buck "Let Me See It" (WSHH Exclusive - Official Music Video)</a>
+            </div>
+        </div>
+
+        <div class='similar-video'>
+            <a href='#'><img src='http://img.youtube.com/vi/IjzQI2VFR-k/mqdefault.jpg' width='120' height='90'></a>
+            <div class='similar-title'>
+                <a href='#'>Future - Hardly (Official Music Video)</a>
+            </div>
+        </div>
+
+        <div class='similar-video'>
+            <a href='#'><img src='http://img.youtube.com/vi/IjzQI2VFR-k/mqdefault.jpg' width='120' height='90'></a>
+            <div class='similar-title'>
+                <a href='#'>Future - Hardly (Official Music Video)</a>
+            </div>
+        </div>
+
+        <div class='similar-video'>
+            <a href='#'><img src='http://img.youtube.com/vi/IjzQI2VFR-k/mqdefault.jpg' width='120' height='90'></a>
+            <div class='similar-title'>
+                <a href='#'>Future - Hardly (Official Music Video)</a>
+            </div>
+        </div>
+
+        <div class='similar-video'>
+            <a href='#'><img src='http://img.youtube.com/vi/IjzQI2VFR-k/mqdefault.jpg' width='120' height='90'></a>
+            <div class='similar-title'>
+                <a href='#'>Future - Hardly (Official Music Video)</a>
+            </div>
+        </div>
+
+        <div class='similar-video'>
+            <a href='#'><img src='http://img.youtube.com/vi/IjzQI2VFR-k/mqdefault.jpg' width='120' height='90'></a>
+            <div class='similar-title'>
+                <a href='#'>Future - Hardly (Official Music Video)</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

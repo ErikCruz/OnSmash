@@ -10,3 +10,11 @@ def index():
 @app.route("/videos")
 def videos():
     return render_template("videos/index.html")
+
+@app.route("/videos/<hash>")
+def video(hash):
+    return render_template("videos/single.html")
+
+@app.route("/videos/embed/<hash>")
+def embed(hash):
+    return render_template("videos/embed.html")
