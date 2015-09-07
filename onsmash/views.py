@@ -1,6 +1,6 @@
 from onsmash import app
 
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, request
 
 
 @app.route("/")
@@ -11,8 +11,8 @@ def index():
 def videos():
     return render_template("videos/index.html")
 
-@app.route("/videos/<hash>")
-def video(hash):
+@app.route("/videos/<slug>")
+def video(slug):
     return render_template("videos/single.html")
 
 @app.route("/videos/embed/<hash>")
@@ -21,4 +21,6 @@ def embed(hash):
 
 @app.route("/videos/new", methods=["GET","POST"])
 def new_video():
+    if request.method == "POST":
+        return "The request was a post!"
     return render_template("videos/new.html")
