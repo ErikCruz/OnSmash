@@ -14,7 +14,7 @@ class Video(db.Model):
 class Day(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String)
-    videos = db.relationship("Video", backred="day",lazy="dynamic")
+    videos = db.relationship("Video", backref="day",lazy="dynamic")
     
     def __repr__(self):
         return "<Day %s: %s>" % (self.id, self.date)
