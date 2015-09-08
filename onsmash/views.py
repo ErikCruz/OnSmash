@@ -1,6 +1,7 @@
 from onsmash import app
 
 from flask import render_template, redirect, url_for, request
+from forms import VideoForm
 
 
 @app.route("/")
@@ -21,6 +22,7 @@ def embed(hash):
 
 @app.route("/videos/new", methods=["GET","POST"])
 def new_video():
-    if request.method == "POST":
-        return "The request was a post!"
-    return render_template("videos/new.html")
+    form = VideoForm()
+    if form.validate_on_submit():
+        return "TODO create a new video and day if necessary"
+    return render_template("videos/new.html",form=form)
