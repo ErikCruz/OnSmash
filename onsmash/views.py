@@ -1,6 +1,6 @@
 from onsmash import app
 
-from flask import render_template, redirect, url_for, request
+from flask import render_template, redirect, url_for, request, flash
 from forms import VideoForm
 
 

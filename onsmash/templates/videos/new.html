@@ -5,17 +5,32 @@
 <div class='form-container'>
     <form action='' method='post'>
         {{ form.hidden_tag() }}
-        <div class='form-group'>
+        <div class='form-group {% if form.title.errors %}has-error{% endif %}'>
             {{ form.title.label(for="title") }}
             {{ form.title(class="form-control",id="title",placeholder="Video Title") }}
+            {% if form.title.errors %}
+                {% for error in form.title.errors %}
+                    <p class="text-danger">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
         </div>
-        <div class='form-group'>
+        <div class='form-group {% if form.description.errors %}has-error{% endif %}'>
             {{ form.description.label(for="description") }}
             {{ form.description(class="form-control", rows="5", id="description") }}
+            {% if form.description.errors %}
+                {% for error in form.description.errors %}
+                    <p class="text-danger">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
         </div>
-        <div class='form-group'>
+        <div class='form-group {% if form.video_link.errors %}has-error{% endif %}'>
             {{ form.video_link.label(for="video_link") }}
             {{ form.video_link(class="form-control",id="video_link",placeholder="Youtube/Dailymotion") }}
+            {% if form.video_link.errors %}
+                {% for error in form.video_link.errors %}
+                    <p class="text-danger">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
         </div>
         <button type='submit' class='btn btn-primary'>Add Video</button>
     </form>
