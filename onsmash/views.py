@@ -24,5 +24,5 @@ def embed(hash):
 def new_video():
     form = VideoForm()
     if form.validate_on_submit():
-        return "TODO create a new video and day if necessary"
+        return "blah"
     return render_template("videos/new.html",form=form)
