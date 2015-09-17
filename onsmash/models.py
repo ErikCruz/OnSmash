@@ -1,3 +1,4 @@
+from slugify import slugify
 from onsmash import db
 
 class Video(db.Model):
@@ -7,6 +8,14 @@ class Video(db.Model):
     video_link = db.Column(db.String, nullable=False)
     slug = db.Column(db.String, nullable=False)
     day_id = db.Column(db.Integer, db.ForeignKey("day.id"))
+    
+    def generate_slug(self):
+        slg = slugify(self.title)
+        q = self.query.filter_by(slug=slg).count()
+        if q > 0:
+            self.slug = slg + str(q+1)
+        else:
+            self.slug = slg
     
     def __repr__(self):
         return "<Video %s: %s>" % (self.id, self.title)

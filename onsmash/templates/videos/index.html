@@ -12,94 +12,99 @@
         <img class='img-responsive' src="http://hw-static.worldstarhiphop.com/u/pic/2015/07/rwIFDIHfaG7w.jpg">
     </a>
 </div>
+{% if days %}
+    {% for day in days %}
+        <div class="date-header">{{ day.date}}</div>
+    {% endfor %}
+{% endif %}
 
-<div class='date-header'>Thursday, July 9 2015</div>
-<ul class='videos'>
+<!--<div class='date-header'>Thursday, July 9 2015</div>-->
+<!--<ul class='videos'>-->
 
-    <li class='video'>
-        <a href='/videos/wshhJshd'>
-            <span class="video-views">6,060 views</span>
-
-
-
-            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/I8PSAfmjbn0S.jpg'>
-            <p>Vince Staples Freestyle With Tim Westwood!</p>
-        </a>
-    </li>
-
-    <li class='video'>
-        <a href='/videos/wshhJshd'>
-            <span class="video-views">131,950 views</span>
-            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/GwPIHMXxjSvu.jpg'>
-            <p>Batman v Superman: Dawn of Justice (Movie Trailer #2)</p>
-        </a>
-    </li>
-
-    <li class='video'>
-        <a href='/videos/wshhJshd'>
-            <span class="video-views">28,278 views</span>
-            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/ficuCbzxWXht.jpg'>
-            <p>Trey Songz - About You</p>
-        </a>
-    </li>
+<!--    <li class='video'>-->
+<!--        <a href='/videos/wshhJshd'>-->
+<!--            <span class="video-views">6,060 views</span>-->
 
 
-    <div class='clearfix'></div>
-</ul>
 
-<div class='date-header'>Sunday, July 12 2015</div>
-<ul class='videos'>
+<!--            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/I8PSAfmjbn0S.jpg'>-->
+<!--            <p>Vince Staples Freestyle With Tim Westwood!</p>-->
+<!--        </a>-->
+<!--    </li>-->
 
-    <li class='video'>
-        <a href='/videos/wshhJshd'>
-            <span class="video-views">127,220 views</span>
-            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/DiaiBaqoRV06.jpg'>
-            <p>Batman Pulled Over In His Lambo (Throwback)</p>
-        </a>
-    </li>
+<!--    <li class='video'>-->
+<!--        <a href='/videos/wshhJshd'>-->
+<!--            <span class="video-views">131,950 views</span>-->
+<!--            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/GwPIHMXxjSvu.jpg'>-->
+<!--            <p>Batman v Superman: Dawn of Justice (Movie Trailer #2)</p>-->
+<!--        </a>-->
+<!--    </li>-->
 
-    <li class='video'>
-        <a href='/videos/wshhJshd'>
-            <span class="video-views">125,131 views</span>
-            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/bVtkcvtdtxf2.jpg'>
-            <p>Cool Invention: Home-Made Power Jet Ski Board!</p>
-        </a>
-    </li>
+<!--    <li class='video'>-->
+<!--        <a href='/videos/wshhJshd'>-->
+<!--            <span class="video-views">28,278 views</span>-->
+<!--            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/ficuCbzxWXht.jpg'>-->
+<!--            <p>Trey Songz - About You</p>-->
+<!--        </a>-->
+<!--    </li>-->
 
-    <li class='video'>
-        <a href='/videos/wshhJshd'>
-            <span class="video-views">136,100 views</span>
-            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/qhpxjpGKkqL7.jpg'>
-            <p>Guy Goes Crazy On Arcade Drumming Game In Japan!</p>
-        </a>
-    </li>
 
-    <li class='video'>
-        <a href='/videos/wshhJshd'>
-            <span class="video-views">136,680 views</span>
-            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/XjD63qOVn3IR.jpg'>
-            <p>Conspiracy Theorist Claims The Government Has Been Poisoning Black Communities With Radiation!</p>
-        </a>
-    </li>
+<!--    <div class='clearfix'></div>-->
+<!--</ul>-->
 
-    <li class='video'>
-        <a href='/videos/wshhJshd'>
-            <span class="video-views">14,036 views</span>
-            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/2c5J5kNUezyA.jpg'>
-            <p>Frames - 100 Or Mo! [Unsigned Artist]</p>
-        </a>
-    </li>
+<!--<div class='date-header'>Sunday, July 12 2015</div>-->
+<!--<ul class='videos'>-->
 
-    <li class='video'>
-        <a href='/videos/wshhJshd'>
-            <span class="video-views">430,885 views</span>
-            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/0fIHFtTt7ezF.jpg'>
-            <p>Drug Lord 'El Chapo' Escapes From Maximum Security Prison In Mexico!</p>
-        </a>
-    </li>
+<!--    <li class='video'>-->
+<!--        <a href='/videos/wshhJshd'>-->
+<!--            <span class="video-views">127,220 views</span>-->
+<!--            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/DiaiBaqoRV06.jpg'>-->
+<!--            <p>Batman Pulled Over In His Lambo (Throwback)</p>-->
+<!--        </a>-->
+<!--    </li>-->
 
-    <div class='clearfix'></div>
-</ul>
+<!--    <li class='video'>-->
+<!--        <a href='/videos/wshhJshd'>-->
+<!--            <span class="video-views">125,131 views</span>-->
+<!--            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/bVtkcvtdtxf2.jpg'>-->
+<!--            <p>Cool Invention: Home-Made Power Jet Ski Board!</p>-->
+<!--        </a>-->
+<!--    </li>-->
+
+<!--    <li class='video'>-->
+<!--        <a href='/videos/wshhJshd'>-->
+<!--            <span class="video-views">136,100 views</span>-->
+<!--            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/qhpxjpGKkqL7.jpg'>-->
+<!--            <p>Guy Goes Crazy On Arcade Drumming Game In Japan!</p>-->
+<!--        </a>-->
+<!--    </li>-->
+
+<!--    <li class='video'>-->
+<!--        <a href='/videos/wshhJshd'>-->
+<!--            <span class="video-views">136,680 views</span>-->
+<!--            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/XjD63qOVn3IR.jpg'>-->
+<!--            <p>Conspiracy Theorist Claims The Government Has Been Poisoning Black Communities With Radiation!</p>-->
+<!--        </a>-->
+<!--    </li>-->
+
+<!--    <li class='video'>-->
+<!--        <a href='/videos/wshhJshd'>-->
+<!--            <span class="video-views">14,036 views</span>-->
+<!--            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/2c5J5kNUezyA.jpg'>-->
+<!--            <p>Frames - 100 Or Mo! [Unsigned Artist]</p>-->
+<!--        </a>-->
+<!--    </li>-->
+
+<!--    <li class='video'>-->
+<!--        <a href='/videos/wshhJshd'>-->
+<!--            <span class="video-views">430,885 views</span>-->
+<!--            <img class='img-responsive' src='http://hw-static.worldstarhiphop.com/u/pic/2015/07/0fIHFtTt7ezF.jpg'>-->
+<!--            <p>Drug Lord 'El Chapo' Escapes From Maximum Security Prison In Mexico!</p>-->
+<!--        </a>-->
+<!--    </li>-->
+
+<!--    <div class='clearfix'></div>-->
+<!--</ul>-->
 
 <div class='showmore'>
     <p>Show More</p>
