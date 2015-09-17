@@ -11,7 +11,7 @@ def index():
 
 @app.route("/videos")
 def videos():
-    days = Day.query.all()
+    days = Day.query.order_by(Day.id).all()
     return render_template("videos/index.html",days=days)
 
 @app.route("/videos/<slug>")
@@ -26,11 +26,23 @@ def embed(hash):
 def new_video():
     form = VideoForm()
     if form.validate_on_submit():
-        today = moment.now().format('dddd, MMMM D YYYY')
-        # Check if today is already in our db
-        today_has_videos = Day.query.filter_by(date=today).first()
-        if today_has_videos:
-            print "Date already in database"
+        now = moment.now().format('dddd, MMMM D YYYY')
+        today = Day.query.filter_by(date=now).first()
+        if today is not None:
+            video = Video(title=form.title.data,description=form.description.data,video_link=form.video_link.data,day_id=today.id)
+            video.generate_slug()
+            db.session.add(video)
+            db.session.commit()
+            flash("Video Successfully Added")
+            return redirect(url_for("index"))
         else:
-            print "Date not in database, create it"
+            day = Day(date=now)
+            db.session.add(day)
+            db.session.flush()
+            video = Video(title=form.title.data,description=form.description.data,video_link=form.video_link.data,day_id=day.id)
+            video.generate_slug()
+            db.session.add(video)
+            db.session.commit()
+            flash("Video Successfully Added")
+            return redirect(url_for("index"))
     return render_template("videos/new.html",form=form)

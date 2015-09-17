@@ -15,6 +15,19 @@
 {% if days %}
     {% for day in days %}
         <div class="date-header">{{ day.date}}</div>
+        <ul class="videos">
+            {% with videos = day.get_videos() %}
+                {% for video in videos %}
+                    <li class="video">
+                        <a href="{{ url_for('video',slug=video.slug) }}">
+                            <span class="video-views">5,816 views</span>
+                            <img class="img-responsive" src="http://hw-static.worldstarhiphop.com/u/pic/2015/07/I8PSAfmjbn0S.jpg">
+                            <p>{{ video.title }}</p>
+                        </a>
+                    </li>
+                {% endfor %}
+            {% endwith %}
+        </ul>
     {% endfor %}
 {% endif %}
 

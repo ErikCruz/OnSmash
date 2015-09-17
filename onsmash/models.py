@@ -1,4 +1,5 @@
 from slugify import slugify
+from sqlalchemy import desc
 from onsmash import db
 
 class Video(db.Model):
@@ -24,6 +25,9 @@ class Day(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String)
     videos = db.relationship("Video", backref="day",lazy="dynamic")
+    
+    def get_videos(self):
+        return Video.query.filter_by(day_id=self.id).order_by(desc(Video.id)).all()
     
     def __repr__(self):
         return "<Day %s: %s>" % (self.id, self.date)
