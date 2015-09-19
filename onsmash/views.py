@@ -1,6 +1,7 @@
 import moment
 from onsmash import app, db
 from flask import render_template, redirect, url_for, request, flash
+from sqlalchemy import desc
 from forms import VideoForm
 from models import Day, Video
 
@@ -11,16 +12,18 @@ def index():
 
 @app.route("/videos")
 def videos():
-    days = Day.query.order_by(Day.id).all()
+    days = Day.query.order_by(desc(Day.id)).all()
     return render_template("videos/index.html",days=days)
 
 @app.route("/videos/<slug>")
 def video(slug):
-    return render_template("videos/single.html")
+    video = Video.query.filter_by(slug=slug).first()
+    return render_template("videos/single.html",video=video)
 
-@app.route("/videos/embed/<hash>")
-def embed(hash):
-    return render_template("videos/embed.html")
+@app.route("/videos/embed/<slug>")
+def embed(slug):
+    video = Video.query.filter_by(slug=slug).first()
+    return render_template("videos/embed.html",video=video)
 
 @app.route("/videos/new", methods=["GET","POST"])
 def new_video():

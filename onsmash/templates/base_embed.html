@@ -5,7 +5,7 @@
     <base target="_parent" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ url_for('static', filename='stylesheets/player.css') }}" rel="stylesheet">
-    <title>Young Buck - Let Me See It | Embedded Player</title>
+    <title>{% block title %}{% endblock %} | Embedded Player</title>
 </head>
 
 <body>
