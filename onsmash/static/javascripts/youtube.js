@@ -35,7 +35,6 @@ $(document).ready(function() {
   //onPlay function
   function onPlay(event) {
     $('.rapvlog_player_controls_wrap').css("height", "0px");
-    console.log("onPlay triggered");
   	$('.rapvlog_player_controls_playbutton > i').removeClass("fa-play").addClass("fa-pause");
     // Interval Function to update the video time
 
@@ -76,6 +75,7 @@ $(document).ready(function() {
     $('.rapvlog_player_controls_buffer').css("width", "0px");
     $('.rapvlog_player_controls_progress').css("width", "0px");
     $('.rapvlog_player_controls_playbutton > i').removeClass("fa-pause").addClass("fa-play");
+    console.log("Video ended");
   }
 
   //onPause function

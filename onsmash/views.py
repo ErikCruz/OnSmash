@@ -12,12 +12,12 @@ def index():
 
 @app.route("/videos")
 def videos():
-    days = Day.query.order_by(desc(Day.id)).all()
+    days = Day.query.order_by(desc(Day.id)).limit(4)
     return render_template("videos/index.html",days=days)
 
 @app.route("/videos/<slug>")
 def video(slug):
-    video = Video.query.filter_by(slug=slug).first()
+    video = Video.query.filter_by(slug=slug).first_or_404()
     return render_template("videos/single.html",video=video)
 
 @app.route("/videos/embed/<slug>")
@@ -49,3 +49,7 @@ def new_video():
             flash("Video Successfully Added")
             return redirect(url_for("index"))
     return render_template("videos/new.html",form=form)
+
+@app.errorhandler(404)
+def page_not_found(e):
+	return render_template('404.html'), 404

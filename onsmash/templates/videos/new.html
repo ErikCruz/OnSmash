@@ -3,7 +3,7 @@
 {% block content %}
 <h1 class='single-page-title'>New Video</h1>
 <div class='form-container'>
-    <form action='' method='post'>
+    <form action='' method='post' enctype="multipart/form-data">
         {{ form.hidden_tag() }}
         <div class='form-group {% if form.title.errors %}has-error{% endif %}'>
             {{ form.title.label(for="title") }}
@@ -28,6 +28,15 @@
             {{ form.video_link(class="form-control",id="video_link",placeholder="Youtube/Dailymotion") }}
             {% if form.video_link.errors %}
                 {% for error in form.video_link.errors %}
+                    <p class="text-danger">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="form-group {% if form.thumbnail.errors %}has-error{% endif %}">
+            {{ form.thumbnail.label(for="thumbnail") }}
+            {{ form.thumbnail(id="thumbnail") }}
+            {% if form.thumbnail.errors %}
+                {% for error in form.thumbnail.errors %}
                     <p class="text-danger">{{ error }}</p>
                 {% endfor %}
             {% endif %}
