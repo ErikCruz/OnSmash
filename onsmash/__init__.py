@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-
+from hashids import Hashids
 from flask_sqlalchemy import SQLAlchemy
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -12,6 +12,7 @@ app.config["UPLOAD_FOLDER"] = os.path.join(os.getcwd(), "THUMBNAILS")
 app.config["ALLOWED_EXTENSIONS"] = ['png', 'jpg', 'jpeg', 'gif']
 
 db = SQLAlchemy(app)
+hashids = Hashids(salt=app.config["SECRET_KEY"])
 
 import views
 import models

@@ -20,7 +20,7 @@
             {% with videos = day.get_videos() %}
                 {% for video in videos %}
                     <li class="video">
-                        <a href="{{ url_for('video',slug=video.slug) }}">
+                        <a href="{{ url_for('video',hash=video.hash) }}">
                             <span class="video-views">5,816 views</span>
                             <img class="img-responsive" src="{{ url_for('uploaded_file', filename=video.thumbnail) }}">
                             <p>{{ video.title }}</p>

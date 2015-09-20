@@ -1,31 +1,28 @@
 import os
-from slugify import slugify
 from sqlalchemy import desc
-from onsmash import db, app
+from onsmash import db, hashids
+from werkzeug import secure_filename
 
 class Video(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
     description = db.Column(db.String, nullable=False)
     video_link = db.Column(db.String, nullable=False)
-    slug = db.Column(db.String, nullable=False)
-    thumbnail = db.Column(db.String, nullable=False)
+    hash = db.Column(db.String)
+    thumbnail = db.Column(db.String)
     day_id = db.Column(db.Integer, db.ForeignKey("day.id"))
     
     def generate_thumbnail(self, upload_folder, file, extensions):
-        ext = file.filename.rsplit(".",1)[1]
+        filename = secure_filename(file.filename)
+        ext = filename.rsplit(".",1)[1]
         if file and "." in file.filename and ext in extensions:
-            filename = self.slug + "." + ext
+            filename = self.hash + "." + ext
             self.thumbnail = filename
             file.save(os.path.join(upload_folder, filename))
     
-    def generate_slug(self):
-        slg = slugify(self.title)
-        q = self.query.filter_by(slug=slg).count()
-        if q > 0:
-            self.slug = slg + str(q)
-        else:
-            self.slug = slg
+    def generate_hash(self):
+        self.hash = hashids.encode(self.id)
+        
     
     def __repr__(self):
         return "<Video %s: %s>" % (self.id, self.title)
