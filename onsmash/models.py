@@ -22,8 +22,8 @@ class Video(db.Model):
             file.save(os.path.join(upload_folder, filename))
     
     def get_videoId(self):
+        query = urlparse.urlparse(self.video_link)
         if "youtu" in self.video_link:
-            query = urlparse.urlparse(self.video_link)
             if query.hostname == "youtu.be":
                 return query.path[1:]
         if query.hostname in ('www.youtube.com', 'youtube.com'):
@@ -34,6 +34,10 @@ class Video(db.Model):
                 return query.path.split('/')[2]
             if query.path[:3] == '/v/':
                 return query.path.split('/')[2]
+        if "dailymotion" in self.video_link:
+            return query.path[7:].rsplit("_")[0]
+        if query.hostname == "dai.ly":
+            return query.path[1:]
         return None
     
     def generate_hash(self):

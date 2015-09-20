@@ -33,6 +33,10 @@
 
 {% block javascripts %}
     {{ super() }}
-    <script type="text/javascript" src="{{ url_for('static', filename='javascripts/jtube.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='javascripts/youtube.js') }}"></script>
+    {% if "youtu" in video.video_link %}
+        <script type="text/javascript" src="{{ url_for('static', filename='javascripts/jtube.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='javascripts/youtube.js') }}"></script>
+    {% else %}
+        <script type="text/javascript" src="{{ url_for('static', filename='javascripts/dailymotion.js') }}"></script>
+    {% endif %}
 {% endblock %}
