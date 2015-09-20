@@ -22,7 +22,7 @@
                     <li class="video">
                         <a href="{{ url_for('video',slug=video.slug) }}">
                             <span class="video-views">5,816 views</span>
-                            <img class="img-responsive" src="http://hw-static.worldstarhiphop.com/u/pic/2015/07/I8PSAfmjbn0S.jpg">
+                            <img class="img-responsive" src="{{ url_for('uploaded_file', filename=video.thumbnail) }}">
                             <p>{{ video.title }}</p>
                         </a>
                     </li>
