@@ -22,7 +22,7 @@
         </div>
         <div role="tabpanel" class="tab-pane fade" id="embed">
             <p>
-                <input type="text" class="form-control" id="embed" value='<iframe width="640" height="360" src="http://www.worldstarhiphop.com/embed/84231" frameborder="0" allowfullscreen></iframe>'>
+                <input type="text" class="form-control" id="embed" value='<iframe width="640" height="360" src="{{ url_for("embed", hash=video.hash, _external=True) }}" frameborder="0" allowfullscreen></iframe>'>
             </p>
         </div>
     </div>

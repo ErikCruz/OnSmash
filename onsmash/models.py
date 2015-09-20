@@ -2,6 +2,7 @@ import os
 from sqlalchemy import desc
 from onsmash import db, hashids
 from werkzeug import secure_filename
+import urlparse
 
 class Video(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -19,6 +20,21 @@ class Video(db.Model):
             filename = self.hash + "." + ext
             self.thumbnail = filename
             file.save(os.path.join(upload_folder, filename))
+    
+    def get_videoId(self):
+        if "youtu" in self.video_link:
+            query = urlparse.urlparse(self.video_link)
+            if query.hostname == "youtu.be":
+                return query.path[1:]
+        if query.hostname in ('www.youtube.com', 'youtube.com'):
+            if query.path == '/watch':
+                p = urlparse.parse_qs(query.query)
+                return p['v'][0]
+            if query.path[:7] == '/embed/':
+                return query.path.split('/')[2]
+            if query.path[:3] == '/v/':
+                return query.path.split('/')[2]
+        return None
     
     def generate_hash(self):
         self.hash = hashids.encode(self.id)

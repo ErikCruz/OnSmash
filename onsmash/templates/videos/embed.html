@@ -5,7 +5,7 @@
 <div id="video-player" class="embed-responsive embed-responsive-16by9">
     <div class="dmplaypause"></div>
     <div class="video_load_overlay"></div>
-    <div id="mymovie" class="A8kNWkAcMBw"></div>
+    <div id="mymovie" class="{{ video.get_videoId() }}"></div>
     <div class="rapvlog_player_controls_wrap">
         <div class="rapvlog_player_controls_shade">
             <div class="rapvlog_player_controls_contain">
@@ -13,7 +13,7 @@
                     <i class="fa fa-play"></i>
                 </div>
                 <div class="rapvlog_player_controls_logo">
-                    <a href="/"><img src="http://cache.worldstarhiphop.com/videos/images/logo.png"></a>
+                    <a href="{{ url_for('video', hash=video.hash, _external=True) }}"><img src="http://cache.worldstarhiphop.com/videos/images/logo.png"></a>
                 </div>
                 <div class="rapvlog_player_controls_volume">
                     <div class="rapvlog_player_controls_volume_bar">
